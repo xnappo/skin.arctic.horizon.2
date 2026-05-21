@@ -801,6 +801,119 @@
         </definition>
     </include>
 
+    <include name="Layout_MediaList_TriPanel">
+        <param name="detailed">false</param>
+        <param name="selected">false</param>
+        <param name="misc">5</param>
+        <definition>
+            <control type="group">
+                <height>$PARAM[item_h]</height>
+                <left>grid_x04</left>
+                <right>grid_x04</right>
+                <include content="Object_Control" condition="$PARAM[selected]">
+                    <param name="control">image</param>
+                    <include condition="!Skin.HasSetting(SelectBox.Glow)">Texture_Shadow_40</include>
+                    <include condition="Skin.HasSetting(SelectBox.Glow)" content="Texture_Glow_40">
+                        <param name="affix">h</param>
+                    </include>
+                    <include>Texture_Box_Highlight_H</include>
+                    <include>Animation_FocusBounce</include>
+                </include>
+
+                <!-- Detailed Info -->
+                <control type="group">
+                    <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Episode)] | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
+                    <left>grid_x04</left>
+                    <right>grid_x04</right>
+                    <control type="group">
+                        <visible>![String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
+                        <include content="Object_Control">
+                            <param name="control">label</param>
+                            <include condition="$PARAM[selected]">Color_SelectedText</include>
+                            <textcolor>main_fg_70</textcolor>
+                            <selectedcolor>main_fg_70</selectedcolor>
+                            <label>$VAR[Label_TitleLabel]</label>
+                            <font>font_mini_bold</font>
+                            <bottom>3</bottom>
+                            <left>0</left>
+                            <right>grid_x14</right>
+                        </include>
+                        <include content="Object_Control">
+                            <param name="control">label</param>
+                            <include condition="$PARAM[selected]">Color_SelectedText</include>
+                            <textcolor>main_fg_70</textcolor>
+                            <selectedcolor>main_fg_70</selectedcolor>
+                            <label>$INFO[ListItem.Rating]</label>
+                            <font>font_mini</font>
+                            <align>right</align>
+                            <bottom>3</bottom>
+                        </include>
+                    </control>
+                    <control type="group">
+                        <visible>[String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
+                        <include content="Layout_MediaList_SongList">
+                            <param name="selected">$PARAM[selected]</param>
+                            <param name="detailed">$PARAM[detailed]</param>
+                        </include>
+                    </control>
+                </control>
+
+                <!-- Basic Info -->
+                <control type="group">
+                    <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Episode)] | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
+                    <left>grid_x04</left>
+                    <right>grid_x04</right>
+
+                    <!-- Playable content -->
+                    <control type="group">
+                        <visible>!String.IsEmpty(ListItem.FileExtension) | String.IsEqual(ListItem.Property(IsPlayable),true)</visible>
+                        <include content="Object_Control">
+                            <param name="control">label</param>
+                            <include condition="$PARAM[selected]">Color_SelectedText</include>
+                            <textcolor>main_fg_70</textcolor>
+                            <selectedcolor>main_fg_70</selectedcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>font_mini_bold</font>
+                            <left>60</left>
+                        </include>
+                        <include content="Object_Control">
+                            <param name="control">label</param>
+                            <include condition="$PARAM[selected]">Color_SelectedText</include>
+                            <textcolor>main_fg_70</textcolor>
+                            <selectedcolor>main_fg_70</selectedcolor>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <font>font_mini</font>
+                            <align>right</align>
+                        </include>
+                    </control>
+
+                    <!-- Other content -->
+                    <control type="group">
+                        <visible>![!String.IsEmpty(ListItem.FileExtension) | String.IsEqual(ListItem.Property(IsPlayable),true)]</visible>
+                        <include content="Object_Control">
+                            <param name="control">label</param>
+                            <include condition="$PARAM[selected]">Color_SelectedText</include>
+                            <textcolor>main_fg_70</textcolor>
+                            <selectedcolor>main_fg_70</selectedcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>font_mini_bold</font>
+                            <visible>![!String.IsEmpty(ListItem.FileExtension) | String.IsEqual(ListItem.Property(IsPlayable),true)]</visible>
+                        </include>
+                        <include content="Object_Control">
+                            <param name="control">label</param>
+                            <include condition="$PARAM[selected]">Color_SelectedText</include>
+                            <textcolor>main_fg_70</textcolor>
+                            <selectedcolor>main_fg_70</selectedcolor>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <font>font_mini</font>
+                            <align>right</align>
+                        </include>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <include name="Layout_DialogSelect">
         <param name="detailed">false</param>
         <param name="selected">false</param>

@@ -13,12 +13,13 @@
             <include condition="$EXP[Exp_View_551_Include]">View_551_Basic_Playlist</include>
             <include condition="$EXP[Exp_View_552_Include]">View_552_MediaInfo_Combined</include>
         </include>
-        <include content="Object_Control" condition="$EXP[Exp_View_508_Include] | $EXP[Exp_View_558_Include] | $EXP[Exp_View_581_Include] | $EXP[Exp_View_557_Include]">
+        <include content="Object_Control" condition="$EXP[Exp_View_508_Include] | $EXP[Exp_View_558_Include] | $EXP[Exp_View_559_Include] | $EXP[Exp_View_581_Include] | $EXP[Exp_View_557_Include]">
             <param name="control">group</param>
             <visible>$EXP[Exp_BigListViews]</visible>
             <include condition="$EXP[Exp_View_508_Include]">View_508_Square_Playlist</include>
             <include condition="$EXP[Exp_View_557_Include]">View_557_MediaInfo_Playlist</include>
             <include condition="$EXP[Exp_View_558_Include]">View_558_MediaInfo_List</include>
+            <include condition="$EXP[Exp_View_559_Include]">View_559_TriPanel</include>
             <include condition="$EXP[Exp_View_581_Include]">View_581_BigPoster_List</include>
         </include>
     </include>
@@ -526,6 +527,70 @@
                 <param name="width">info_widelandscape_w</param>
             </include>
         </definition>
+    </include>
+
+    <include name="View_559_TriPanel">
+        <control type="group">
+            <visible>Control.IsVisible(559)</visible>
+            <include>Dimension_View</include>
+
+            <control type="group">
+                <width>grid_x56</width>
+                <height>info_poster_h</height>
+                <centertop>50%</centertop>
+                <control type="group">
+                    <left>0</left>
+                    <right>0</right>
+                    <include content="View_List_SortLine">
+                        <param name="detailed">true</param>
+                    </include>
+                    <include content="List_MediaList">
+                        <param name="id">559</param>
+                        <param name="itemlayout_include">Layout_MediaList_TriPanel</param>
+                        <param name="controltype">fixedlist</param>
+                        <param name="detailed">true</param>
+                        <focusposition>1</focusposition>
+                        <movement>6</movement>
+                        <left>-grid_x04</left>
+                        <right>-grid_x04</right>
+                        <top>0</top>
+                        <bottom>0</bottom>
+                        <visible>$EXP[Exp_View_Special] + $EXP[Exp_View_559]</visible>
+                        <viewtype label="$LOCALIZE[31391]">list</viewtype>
+                        <onleft>63</onleft>
+                        <onright>menu</onright>
+                        <pagecontrol>63</pagecontrol>
+                        <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
+                    </include>
+                </control>
+            </control>
+
+            <control type="group">
+                <left>583</left>
+                <width>594</width>
+                <height>850</height>
+                <centertop>50%</centertop>
+                <include content="Object_BigPoster">
+                    <param name="diffuse">diffuse/poster_w460_h680.png</param>
+                    <param name="icon">$VAR[Image_Poster]</param>
+                    <width>594</width>
+                    <height>850</height>
+                    <centerleft>50%</centerleft>
+                </include>
+            </control>
+
+            <control type="group">
+                <right>0</right>
+                <width>grid_x56</width>
+                <include content="Info_Panel">
+                    <param name="title">false</param>
+                    <param name="shortline">true</param>
+                    <param name="line_id">99559</param>
+                    <param name="plotheight">info_plot_mediainfo_h</param>
+                    <param name="plotwidth">100%</param>
+                </include>
+            </control>
+        </control>
     </include>
 
 

@@ -1964,3 +1964,8 @@ msgstr "Select + Right Stick"
 msgctxt "#31390"
 msgid "Game menu"
 msgstr "Game menu"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31391"
+msgid "TriPanel"
+msgstr ""

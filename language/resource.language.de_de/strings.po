@@ -1584,6 +1584,11 @@ msgctxt "#31309"
 msgid "Next week"
 msgstr "Nächste Woche"
 
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31391"
+msgid "TriPanel"
+msgstr "Dreifach-Panel"
+
 #: /1080i/Custom_1121_Hub_TMDb_TVShows.xml
 msgctxt "#31310"
 msgid "Trending"

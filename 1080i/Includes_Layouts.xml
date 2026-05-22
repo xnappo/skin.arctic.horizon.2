@@ -716,11 +716,6 @@
                             <font>font_main_bold</font>
                             <bottom>3</bottom>
                         </include>
-                        <include content="Object_Indicator_List">
-                            <param name="selected">$PARAM[selected]</param>
-                            <centertop>50%</centertop>
-                            <centerright>100</centerright>
-                        </include>
                         <include content="Object_Control">
                             <param name="control">label</param>
                             <include condition="$PARAM[selected]">Color_SelectedText</include>
@@ -750,10 +745,6 @@
                     <!-- Indicator for items that are playable -->
                     <control type="group">
                         <visible>!String.IsEmpty(ListItem.FileExtension) | String.IsEqual(ListItem.Property(IsPlayable),true)</visible>
-                        <include content="Object_Indicator_List">
-                            <centertop>50%</centertop>
-                            <centerleft>10</centerleft>
-                        </include>
                         <include content="Object_Control">
                             <param name="control">label</param>
                             <include condition="$PARAM[selected]">Color_SelectedText</include>
@@ -829,14 +820,19 @@
                         <visible>![String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
                         <include content="Object_Control">
                             <param name="control">label</param>
+                            <left>0</left>
+                            <right>grid_x14</right>
                             <include condition="$PARAM[selected]">Color_SelectedText</include>
                             <textcolor>main_fg_70</textcolor>
                             <selectedcolor>main_fg_70</selectedcolor>
                             <label>$VAR[Label_TitleLabel]</label>
                             <font>font_mini_bold</font>
                             <bottom>3</bottom>
-                            <left>0</left>
-                            <right>grid_x14</right>
+                        </include>
+                        <include content="Object_Indicator_List">
+                            <param name="selected">$PARAM[selected]</param>
+                            <centertop>50%</centertop>
+                            <centerright>100</centerright>
                         </include>
                         <include content="Object_Control">
                             <param name="control">label</param>
@@ -867,6 +863,10 @@
                     <!-- Playable content -->
                     <control type="group">
                         <visible>!String.IsEmpty(ListItem.FileExtension) | String.IsEqual(ListItem.Property(IsPlayable),true)</visible>
+                        <include content="Object_Indicator_List">
+                            <centertop>50%</centertop>
+                            <centerleft>10</centerleft>
+                        </include>
                         <include content="Object_Control">
                             <param name="control">label</param>
                             <include condition="$PARAM[selected]">Color_SelectedText</include>

@@ -582,13 +582,18 @@
             <control type="group">
                 <right>0</right>
                 <width>grid_x56</width>
-                <include content="Info_Panel">
-                    <param name="title">false</param>
-                    <param name="shortline">true</param>
-                    <param name="line_id">99559</param>
-                    <param name="plotheight">info_plot_mediainfo_h</param>
-                    <param name="plotwidth">100%</param>
-                </include>
+                <height>info_poster_h</height>
+                <centertop>50%</centertop>
+                <control type="group">
+                    <top>grid_x12</top>
+                    <include content="Info_Panel">
+                        <param name="title">false</param>
+                        <param name="shortline">true</param>
+                        <param name="line_id">99559</param>
+                        <param name="plotheight">info_plot_mediainfo_h</param>
+                        <param name="plotwidth">100%</param>
+                    </include>
+                </control>
             </control>
         </control>
     </include>

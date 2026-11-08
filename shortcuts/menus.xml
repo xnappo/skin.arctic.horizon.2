@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortcuts>
+    <menu id="mainmenu" label="Main menu">
+        <item id="movies" label="$LOCALIZE[342]" icon="special://skin/extras/icons/film.png" action="ActivateWindow(Videos,MovieTitles,return)"/>
+        <item id="tvshows" label="$LOCALIZE[20343]" icon="special://skin/extras/icons/tv.png" action="ActivateWindow(Videos,TVShowTitles,return)"/>
+        <item id="music" label="$LOCALIZE[2]" icon="special://skin/extras/icons/songs.png" action="ActivateWindow(Music)"/>
+        <item id="livetv" label="$LOCALIZE[31085]" icon="special://skin/extras/icons/livetv.png" action="ActivateWindow(TVChannels)" visible="PVR.HasTVChannels"/>
+        <item id="videos" label="$LOCALIZE[3]" icon="special://skin/extras/icons/video.png" action="ActivateWindow(Videos)" visible="!Library.HasContent(Movies) + !Library.HasContent(TVShows)"/>
+    </menu>
+    <menu id="powermenu" label="Power menu">
+        <item id="quit" label="$LOCALIZE[13012]" icon="special://skin/extras/icons/power.png" action="Quit"/>
+        <item id="shutdown" label="$LOCALIZE[13005]" icon="special://skin/extras/icons/power.png" action="ShutDown"/>
+        <item id="suspend" label="$LOCALIZE[13011]" icon="special://skin/extras/icons/power.png" action="Suspend"/>
+    </menu>
+    <menu id="searchmenu" label="Search menu">
+        <item id="search" label="$LOCALIZE[137]" icon="special://skin/extras/icons/search.png" action="ActivateWindow(Videos,Search,return)"/>
+        <item id="searchmusic" label="$LOCALIZE[2]" icon="special://skin/extras/icons/search.png" action="ActivateWindow(Music,Search,return)"/>
+    </menu>
+</shortcuts>

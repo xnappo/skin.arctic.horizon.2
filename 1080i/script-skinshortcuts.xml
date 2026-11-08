@@ -121,12 +121,12 @@
                             <param name="control" value="button" />
                             <description>Choose Shortcut</description>
                             <onfocus>SetProperty(TMDbHelper.IsStandardSkinShortcut,1,Home)</onfocus>
-                            <visible>!String.EndsWith(Window.Property(groupname),.5)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.4)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.3)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.2)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
-                            <visible>!String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.5)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.4)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.3)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.2)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.1)</visible>
+                            <visible>!String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                         </include>
 
                         <!-- Widget: Choose Widget -->
@@ -138,7 +138,7 @@
                             <onfocus>ClearProperty(TMDbHelper.IsStandardSkinShortcut,Home)</onfocus>
                             <onclick>SetProperty(custom-grouping,widget)</onclick>
                             <onclick>SendClick(401)</onclick>
-                            <visible>String.EndsWith(Window.Property(groupname),.1) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.5)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.1) | String.EndsWith(Window.Property(menuname),.3) | String.EndsWith(Window.Property(menuname),.4) | String.EndsWith(Window.Property(menuname),.5)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnUnFocus</include>
                         </include>
 
@@ -151,7 +151,7 @@
                             <onfocus>ClearProperty(TMDbHelper.IsStandardSkinShortcut,Home)</onfocus>
                             <onclick>SetProperty(custom-grouping,widgethub)</onclick>
                             <onclick>SendClick(401)</onclick>
-                            <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.2)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnUnFocus</include>
                         </include>
 
@@ -164,7 +164,7 @@
                             <onfocus>ClearProperty(TMDbHelper.IsStandardSkinShortcut,Home)</onfocus>
                             <onclick>SetProperty(custom-grouping,customsearchdefaultitems)</onclick>
                             <onclick>SendClick(401)</onclick>
-                            <visible>String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnUnFocus</include>
                         </include>
 
@@ -177,11 +177,11 @@
                             <onfocus>SetProperty(IsStandardSkinShortcut,1,Home)</onfocus>
                             <label2>$INFO[Container(211).ListItem.Property(Path)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.2)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.3)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.4)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.5)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.1)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.2)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.3)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.4)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.5)</visible>
                         </include>
 
                         <!-- Widget: Action -->
@@ -195,7 +195,7 @@
                             <onclick>SendClick(307)</onclick>
                             <label2>$INFO[Container(211).ListItem.Property(Path)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.1) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.5)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.1) | String.EndsWith(Window.Property(menuname),.3) | String.EndsWith(Window.Property(menuname),.4) | String.EndsWith(Window.Property(menuname),.5)</visible>
                         </include>
 
                         <!-- Custom Hub Widget: Action -->
@@ -209,7 +209,7 @@
                             <onclick>SendClick(307)</onclick>
                             <label2>$INFO[Container(211).ListItem.Property(Path)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.2)</visible>
                         </include>
 
                         <!-- Custom Hub Node 1: Customise Node -->
@@ -222,7 +222,7 @@
                             <onclick>Action(Back)</onclick>
                             <onclick>AlarmClock(clickit,SendClick(408),00:01,silent)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.2)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),CustomNode1)</visible>
                         </include>
 
@@ -236,7 +236,7 @@
                             <onclick>Action(Back)</onclick>
                             <onclick>AlarmClock(clickit,SendClick(409),00:01,silent)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.2)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),CustomNode2)</visible>
                         </include>
 
@@ -250,7 +250,7 @@
                             <onclick>Action(Back)</onclick>
                             <onclick>AlarmClock(clickit,SendClick(410),00:01,silent)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.2)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),CustomNode3)</visible>
                         </include>
 
@@ -263,7 +263,7 @@
                             <onclick>SetProperty(SkinShortcutsDialogType,$LOCALIZE[31368],Home)</onclick>
                             <onclick>AlarmClock(RefocusDialog,SetFocus(9922),00:00,silent)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),ActivateWindow(1132))</visible>
                         </include>
 
@@ -284,12 +284,12 @@
                             <description>Icon</description>
                             <label>$LOCALIZE[31082]</label>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.2)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.3)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.4)</visible>
-                            <visible>!String.EndsWith(Window.Property(groupname),.5)</visible>
-                            <visible>!String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.1)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.2)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.3)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.4)</visible>
+                            <visible>!String.EndsWith(Window.Property(menuname),.5)</visible>
+                            <visible>!String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                         </include>
 
                         <!-- Standard: Open Customise Submenu -->
@@ -299,7 +299,7 @@
                             <description>Submenu</description>
                             <label>$LOCALIZE[1034]</label>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                         </include>
 
                         <!-- Standard: Open Customise Widgets -->
@@ -309,7 +309,7 @@
                             <description>Other widgets</description>
                             <label>$LOCALIZE[31103]</label>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
 
@@ -324,7 +324,7 @@
                             <label>$LOCALIZE[31102]</label>
                             <label2>$INFO[Container(211).ListItem.Property(widgetPath)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                         </include>
 
                         <!-- Submenu Bumper: Choose Widget -->
@@ -338,7 +338,7 @@
                             <onclick>SetProperty(SkinShortcutsDialogType,$LOCALIZE[31229],Home)</onclick>
                             <onclick>AlarmClock(RefocusDialog,SetFocus(9906),00:00,silent)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
 
@@ -352,7 +352,7 @@
                             <label>$LOCALIZE[31330]</label>
                             <label2>$INFO[container(9211).listitem.property(widgetOnDownAction)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                             <visible>!Skin.HasSetting(Home.VerticalMenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
@@ -367,7 +367,7 @@
                             <label>$LOCALIZE[31382]</label>
                             <label2>$INFO[container(9211).listitem.property(menuOnUpAction)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                             <visible>!Skin.HasSetting(Home.VerticalMenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
@@ -380,7 +380,7 @@
                             <label>$LOCALIZE[736]</label>
                             <label2>$INFO[Container(211).ListItem.Property(widgetAspect)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.1) | String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                         </include>
 
                         <!-- Widget Options: Content Type -->
@@ -391,7 +391,7 @@
                             <label>$LOCALIZE[31106]</label>
                             <label2>$INFO[Container(211).ListItem.Property(widgetTarget)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.5) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.2) | String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.5) | String.EndsWith(Window.Property(menuname),.4) | String.EndsWith(Window.Property(menuname),.3) | String.EndsWith(Window.Property(menuname),.2) | String.EndsWith(Window.Property(menuname),.1) | String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnFocus</include>
                         </include>
 
@@ -403,7 +403,7 @@
                             <label>$LOCALIZE[31016]</label>
                             <label2>$INFO[Container(211).ListItem.Property(widgetSortby)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.5) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.2) | String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.5) | String.EndsWith(Window.Property(menuname),.4) | String.EndsWith(Window.Property(menuname),.3) | String.EndsWith(Window.Property(menuname),.2) | String.EndsWith(Window.Property(menuname),.1) | String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                         </include>
 
                         <!-- Widget Options: Sort Direction -->
@@ -414,7 +414,7 @@
                             <label>$LOCALIZE[580]</label>
                             <label2>$INFO[Container(211).ListItem.Property(widgetSortorder)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.5) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.2) | String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.5) | String.EndsWith(Window.Property(menuname),.4) | String.EndsWith(Window.Property(menuname),.3) | String.EndsWith(Window.Property(menuname),.2) | String.EndsWith(Window.Property(menuname),.1) | String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                         </include>
 
                         <!-- Widget Options: Expand Info (Both Options) -->
@@ -431,7 +431,7 @@
                             <onclick condition="!String.IsEmpty(Container(211).ListItem.Property(widgetInfo)) + String.IsEqual(Container(211).ListItem.Property(widgetInfo),Full)">ClearProperty(customValue)</onclick>
                             <onclick>SendClick(404)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.1)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.1)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(widgetAspect),Button) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Apps) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Text) + !String.IsEqual(Container(211).ListItem.Property(list),Submenu) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Lovefilm) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Banner) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Poster) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Landscape)</visible>
                         </include>
 
@@ -447,7 +447,7 @@
                             <onclick condition="!String.IsEmpty(Container(211).ListItem.Property(widgetInfo))">ClearProperty(customValue)</onclick>
                             <onclick>SendClick(404)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(widgetAspect),Button) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Apps) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Text) + !String.IsEqual(Container(211).ListItem.Property(list),Submenu) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Lovefilm) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Banner) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Poster) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Landscape)</visible>
                         </include>
 
@@ -463,7 +463,7 @@
                             <onclick condition="!String.IsEmpty(Container(211).ListItem.Property(widgetAutoScroll))">ClearProperty(customValue)</onclick>
                             <onclick>SendClick(404)</onclick>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.1)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.1)</visible>
                         </include>
 
                         <!-- Widget Options: Limit -->
@@ -474,7 +474,7 @@
                             <label>$LOCALIZE[31188]</label>
                             <label2>$INFO[Container(211).ListItem.Property(widgetLimit)]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                            <visible>String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
+                            <visible>String.EndsWith(Window.Property(menuname),.1) | String.IsEqual(Window.Property(menuname),searchmenu)</visible>
                         </include>
 
 
@@ -521,7 +521,7 @@
                     <label2>$INFO[Container(211).ListItem.Property(widgetPath)]</label2>
                     <onfocus>ClearProperty(TMDbHelper.IsStandardSkinShortcut,Home)</onfocus>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                 </include>
 
@@ -534,7 +534,7 @@
                     <label>$LOCALIZE[31106]</label>
                     <label2>$INFO[Container(211).ListItem.Property(widgetTarget)]</label2>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
@@ -547,7 +547,7 @@
                     <label>$LOCALIZE[736]</label>
                     <label2>$INFO[Container(211).ListItem.Property(widgetStyle)]</label2>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
@@ -561,7 +561,7 @@
                     <label>$LOCALIZE[31016]</label>
                     <label2>$INFO[Container(211).ListItem.Property(widgetSortby)]</label2>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
@@ -575,7 +575,7 @@
                     <label>$LOCALIZE[580]</label>
                     <label2>$INFO[Container(211).ListItem.Property(widgetSortorder)]</label2>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
@@ -589,7 +589,7 @@
                     <label>$LOCALIZE[31188]</label>
                     <label2>$INFO[Container(211).ListItem.Property(widgetLimit)]</label2>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
@@ -606,7 +606,7 @@
                     <label>$LOCALIZE[31185]</label>
                     <selected>!String.IsEmpty(Container(211).ListItem.Property(widgetAutoScroll))</selected>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
@@ -622,7 +622,7 @@
                     <onclick>SetProperty(widgetID,SubmenuBumper)</onclick>
                     <onclick>SendClick(312)</onclick>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31229])</visible>
                 </include>
 
@@ -639,7 +639,7 @@
                     <onclick condition="String.IsEqual(Container(211).ListItem.Property(widgetAspect.SubmenuBumper),Text)">SetProperty(customValue,Standard)</onclick>
                     <onclick>SendClick(404)</onclick>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31229])</visible>
                 </include>
 
@@ -654,7 +654,7 @@
                     <onclick>SetProperty(widgetID,HubFullscreen)</onclick>
                     <onclick>SendClick(312)</onclick>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31368])</visible>
                 </include>
                 <!-- Custom Hub: Choose Submenu -->
@@ -668,7 +668,7 @@
                     <onclick>SetProperty(widgetID,HubSubmenu)</onclick>
                     <onclick>SendClick(312)</onclick>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31368])</visible>
                 </include>
                 <!-- Custom Hub: Open Widget Customisation -->
@@ -678,7 +678,7 @@
                     <description>Hub widgets</description>
                     <label>$LOCALIZE[31366]</label>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>String.IsEqual(Window.Property(menuname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31368])</visible>
                 </include>
             </control>
